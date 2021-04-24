@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: white;
+  background-color: black;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  width: 20vh;
+  height: 20vh;
+  border: dotted white;
+  position: relative;
+}
+
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 75%;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.hamburger {
+  width: 75%;
+  height: 75%;
+  border: solid white;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hamburger div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: blanchedalmond;
+
+  height: 2px;
+  width: 100%;
+
+  position: relative;
+
+  transition: all 2s ease;
+}
+
+.hamburger div::before {
+  content: "before";
+  position: absolute;
+  top: 20px;
+  height: 2px;
+  background-color: brown;
+  width: 100%;
+
+  transition: all 2s ease;
+}
+
+.hamburger div::after {
+  content: "after";
+  position: absolute;
+  top: -20px;
+  height: 2px;
+  width: 100%;
+  background-color: brown;
+
+  transition: all 2s ease;
+}
+
+.toggle:checked + .hamburger > div::after,
+.toggle:checked + .hamburger > div::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.toggle:checked + .hamburger > div {
+  transform: rotate(135deg);
+}

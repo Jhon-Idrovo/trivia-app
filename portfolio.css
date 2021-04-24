@@ -31,6 +31,9 @@ body::-webkit-scrollbar-thumb {
 
 /* NAV BAR */
 nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
   background-color: var(--bg-secondary);
   height: 50px;
   position: fixed;
@@ -51,7 +54,7 @@ nav ul {
   background-color: var(--bg-secondary);
 }
 
-nav li {
+nav ul li {
   display: inline;
   padding: 0 2px;
   background-color: var(--bg-secondary);
@@ -60,27 +63,77 @@ nav li {
   transition: border-width var(--transition-speed) ease-in-out;
 }
 
-nav a {
+nav ul li a {
   color: white;
   padding: 0 5px;
   background-color: var(--bg-secondary);
 }
 
-nav li:hover {
+nav ul li:hover {
   border-width: 3px 0;
 }
 
-#nav-check,
-.nav-icon {
+#nav-check {
   display: none;
 }
 
-.nav-icon i {
-  transition: all var(--transition-speed) ease;
-}
-
 @media (max-width: 720px) {
-  nav ul {
+  nav #nav-check {
+    display: initial;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    opacity: 0;
+  }
+  /* HAMBURGUER CONTAINER */
+  nav .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+  }
+
+  /* HAMBURGER LINE */
+  nav .hamburger > div {
+    background-color: var(--text-primary);
+    width: 100%;
+    height: 2px;
+    /* this is the base line, so this maintains its middle position  */
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all var(--transition-speed) ease;
+  }
+
+  nav .hamburger > div::before,
+  nav .hamburger > div::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    background-color: inherit;
+    width: 100%;
+    height: 2.5px;
+    transition: all var(--transition-speed) ease;
+  }
+  nav .hamburger > div::after {
+    top: 10px;
+  }
+
+  /* LIST */
+  nav > ul {
     position: absolute;
     top: 100%;
     right: 0;
@@ -88,29 +141,31 @@ nav li:hover {
     padding: 0 6vw;
     text-align: center;
     margin: 0;
+
     max-height: 0;
     overflow: hidden;
+
+    transition: max-height var(--transition-speed) ease;
   }
-  nav ul li {
+  nav > ul > li {
     display: block;
     line-height: 3rem;
   }
-  nav ul li a {
+  nav > ul > li > a {
     padding: 5px;
   }
-  .nav-icon {
-    display: block;
-  }
-  .nav-icon i {
-    font-size: 2rem;
 
-    position: absolute;
+  /* ANIMATIONS */
+  nav #nav-check:checked + .hamburger > div {
+    transform: rotate(315deg);
+  }
+  nav #nav-check:checked + .hamburger > div::after,
+  nav #nav-check:checked + .hamburger > div::before {
     top: 0;
-    right: 0;
-    bottom: 0;
+    transform: rotate(90deg);
   }
-
-  #nav-check:checked + .nav-icon i {
-    transform: rotate(180deg);
+  nav #nav-check:checked ~ .nav-bar-menu-list {
+    max-height: 100vh;
+    z-index: 1;
   }
 }
