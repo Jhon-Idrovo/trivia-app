@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./expenses-form.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>Ingresos</li>
+      <li>Gastos</li>
+      <li>Estadisticas</li>
+      <li>Todo</li>
+    </ul>
+    <div class="table-container">
+      <table>
+        <thead>
+          <th>Tipo</th>
+          <th>Descripcción</th>
+          <th>Monto</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="type-input">
+              <input type="text" name="type" id="type" />
+            </td>
+            <td class="description-input">
+              <input type="text" name="description" id="description" />
+            </td>
+            <td class="amount-input">
+              <input type="number" name="amount" id="amount" />
+            </td>
+            <td class="recurrence-box">
+              <input type="checkbox" name="isRecurrent" id="isRecurrent" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

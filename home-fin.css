@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.accordion-bar {
+  background-color: aquamarine;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s ease;
+  padding: 0 10px;
+}
+
+.accordion-check {
+  display: none;
+}
+
+.accordion-check:checked ~ .accordion-bar > i {
+  transform: rotate(180deg);
+}
+
+#toggle-icon {
+  transition: all ease 0.5s;
+  line-height: normal;
+}
+
+.accordion-check ~ form {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.accordion-check:checked ~ form {
+  max-height: 500px;
+}

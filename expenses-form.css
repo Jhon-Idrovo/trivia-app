@@ -1,0 +1,45 @@
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+}
+ul li {
+  display: inline;
+  background-color: brown;
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+table {
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 1px solid;
+}
+
+.table-container {
+  width: 100%;
+}
+
+input {
+  width: 20px;
+}
+
+#type,
+#description {
+  width: 100%;
+}
+
+.type-input,
+.description-input {
+  width: 40%;
+}
+
+.amount-input,
+.recurrence-box {
+  width: 10%;
+}

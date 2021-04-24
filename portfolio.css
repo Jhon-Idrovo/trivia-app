@@ -1,0 +1,116 @@
+:root {
+  font-size: 16px;
+  font-family: "Roboto Mono", monospace;
+  --text-primary: white;
+  --bg-primary: black;
+  --bg-secondary: rgb(78, 78, 78);
+  --bg-terciary: rgb(44, 44, 44);
+  --border-radious: 3px;
+  --transition-speed: 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* SCROLLING TAB */
+body::-webkit-scrollbar {
+  width: 0.75rem;
+  background-color: var(--bg-primary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--bg-terciary);
+}
+
+/* NAV BAR */
+nav {
+  background-color: var(--bg-secondary);
+  height: 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+nav label {
+  color: white;
+  background-color: var(--bg-secondary);
+}
+
+nav ul {
+  float: right;
+  margin-top: 15px;
+  margin-right: 2vw;
+  background-color: var(--bg-secondary);
+}
+
+nav li {
+  display: inline;
+  padding: 0 2px;
+  background-color: var(--bg-secondary);
+  border: solid var(--text-primary);
+  border-width: 0;
+  transition: border-width var(--transition-speed) ease-in-out;
+}
+
+nav a {
+  color: white;
+  padding: 0 5px;
+  background-color: var(--bg-secondary);
+}
+
+nav li:hover {
+  border-width: 3px 0;
+}
+
+#nav-check,
+.nav-icon {
+  display: none;
+}
+
+.nav-icon i {
+  transition: all var(--transition-speed) ease;
+}
+
+@media (max-width: 720px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 0 6vw;
+    text-align: center;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  nav ul li {
+    display: block;
+    line-height: 3rem;
+  }
+  nav ul li a {
+    padding: 5px;
+  }
+  .nav-icon {
+    display: block;
+  }
+  .nav-icon i {
+    font-size: 2rem;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  #nav-check:checked + .nav-icon i {
+    transform: rotate(180deg);
+  }
+}
