@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./family-bee.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -14,10 +19,19 @@
         <div></div>
       </div>
       <ul class="menu-list">
-        <li class="menu-list-item">Products</li>
-        <li class="menu-list-item">Our History</li>
-        <li class="menu-list-item">Especials</li>
-        <li class="menu-list-item">Get In Touch</li>
+        <li class="menu-list-item" id="products-list-item">
+          <a href="">Products</a><input type="checkbox" id="products-check" />
+          <div></div>
+          <ul class="nested-menu">
+            <li class=""><a href="">Honey</a></li>
+            <li class=" "><a href="">Propolis</a></li>
+            <li class=" "><a href="">Royal Jelly</a></li>
+            <li class=" "><a href="">Suplements</a></li>
+          </ul>
+        </li>
+        <li class="menu-list-item"><a href="">Our History</a></li>
+        <li class="menu-list-item"><a href="">Specials</a></li>
+        <li class="menu-list-item"><a href="">Get In Touch</a></li>
       </ul>
     </nav>
   </body>
