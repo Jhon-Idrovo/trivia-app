@@ -4,6 +4,8 @@
   --text-primary: white;
   --bg-primary: black;
   --bg-secondary: hsl(0, 0%, 0%);
+  --bg-impact: yellow;
+  --text-impact-contrast: black;
   --bg-terciary: rgb(44, 44, 44);
   --border-radious: 5px;
   --transition-speed: 0.4s;
@@ -128,6 +130,8 @@ nav .menu-list {
   position: fixed;
   top: 2rem;
   right: 0;
+
+  height: 100%;
   transform: translateX(100%);
 
   overflow: hidden;
@@ -137,7 +141,8 @@ nav .menu-list {
 
 .menu-list .menu-list-item {
   padding: 1rem;
-  font-size: 2rem;
+
+  font-size: 1.8rem;
   border-bottom: 1px solid var(--text-primary);
   overflow: hidden;
   position: relative;
@@ -145,7 +150,10 @@ nav .menu-list {
 .menu-list .menu-list-item a {
   transition: opacity var(--fast-transition-speed) ease;
 }
-.menu-list .menu-list-item a:hover {
+a {
+  transition: opacity var(--transition-speed) var(--transition);
+}
+a:hover {
   opacity: 0.5;
 }
 #products-check {
@@ -204,18 +212,21 @@ nav .menu-list {
 }
 
 #products-check:checked ~ .nested-menu {
+  margin-bottom: 1rem;
   max-height: 10rem;
+  transition: max-height var(--transition-speed) var(--transition);
 }
 
 /* MAIN */
 main {
   width: 100vw;
 }
-h1 {
+main > h1 {
   margin: auto;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 2.5rem;
 }
+
 /* SHOWCASE */
 
 /* showcase menu */
@@ -261,7 +272,11 @@ h1 {
   position: relative;
   top: -2rem;
   transition: top var(--transition-speed) var(--transition);
-  background-color: inherit;
+  background-color: var(--bg-impact);
+  color: var(--text-impact-contrast);
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 .showcase-item:hover > .showcase-item-cta > button {
   top: 0;
