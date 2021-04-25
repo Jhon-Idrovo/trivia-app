@@ -22,7 +22,8 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scrollS;
 }
 /* SCROLLING TAB */
 body::-webkit-scrollbar {
