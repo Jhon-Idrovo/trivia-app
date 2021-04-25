@@ -1,0 +1,46 @@
+:root {
+  background-color: black;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.menu-list {
+  padding: 1rem;
+}
+
+.menu-list .menu-list-item {
+}
+
+.menu-list .menu-list-item > div {
+  display: inline;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-areas:
+    "first first first"
+    "second . third"
+    "second . third";
+}
+
+.first {
+  grid-area: first;
+  background-color: brown;
+}
+.second {
+  grid-area: second;
+  background-color: cadetblue;
+}
+.third {
+  grid-area: third;
+  background-color: burlywood;
+}
