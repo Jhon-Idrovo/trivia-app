@@ -37,10 +37,14 @@ body::-webkit-scrollbar-thumb {
 
 /* NAV BAR */
 
-nav {
+body > nav {
   height: 2rem;
   background-color: var(--bg-secondary);
 
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -121,15 +125,14 @@ nav .hamburger > div::after {
 
 /* menu list */
 nav .menu-list {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   right: 0;
-
-  max-width: 0;
+  transform: translateX(100%);
 
   overflow: hidden;
 
-  transition: max-width var(--transition-speed) ease;
+  transition: transform var(--transition-speed) var(--transition);
 }
 
 .menu-list .menu-list-item {
@@ -182,11 +185,7 @@ nav .menu-list {
 /* menu list animations*/
 
 #hamburger-check:checked ~ .menu-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  max-width: 100vw;
+  transform: translateX(0);
 }
 
 #products-check:checked + span::before {
@@ -201,7 +200,8 @@ nav .menu-list {
   font-size: 1.3rem;
   max-height: 0;
   transition-property: max-height, top;
-  transition: var(--transition-speed) var(--transition);
+  transition-duration: var(--transition-speed);
+  transition-timing-function: var(--transition);
 }
 
 #products-check:checked ~ .nested-menu {
