@@ -199,14 +199,12 @@ nav .menu-list {
   top: 1rem;
   font-size: 1.3rem;
   max-height: 0;
-  transition-property: max-height, top;
-  transition-duration: var(--transition-speed);
-  transition-timing-function: var(--transition);
+
+  transition: max-height var(--transition-speed) var(--transition);
 }
 
 #products-check:checked ~ .nested-menu {
-  top: 0;
-  max-height: 500px;
+  max-height: 10rem;
 }
 
 /* MAIN */
