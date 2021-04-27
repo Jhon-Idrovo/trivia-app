@@ -1,16 +1,14 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
+  line-height: 1.5;
+  font-size: 16px;
 }
 :root {
-  --bg-initial: gray;
-  --bg-selected: green;
-  --bg-empty: red;
+  --bg-initial: rgb(235, 235, 235);
+  --bg-selected: rgb(127, 243, 127);
+  --bg-empty: rgb(250, 108, 108);
 }
 
 * {
@@ -19,68 +17,62 @@ body {
   margin: 0;
 }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
 .timespace {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: auto;
-  grid-template-areas: "motorists time";
-  background-color: var(--bg-initial);
-}
 
-.timespace .motorists {
-  grid-area: motorist;
-}
-
-.timespace .time {
-  grid-area: time;
+  min-height: 2rem;
+  margin: 0.5rem 1rem;
 }
 
 .counter,
 .time {
-  background-color: inherit;
+  background-color: var(--bg-initial);
+
   position: relative;
 }
-.time .time-check {
+
+.counter {
+  margin: 1px;
+}
+
+.time-check {
   width: 100%;
   height: 100%;
 
   position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   z-index: 1;
   opacity: 0;
+
+  cursor: pointer;
 }
 .time .time-label {
   position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+
+  text-align: center;
 
   width: 100%;
   height: 100%;
 
   background-color: inherit;
+  -webkit-box-shadow: inset 0px 0px 4px 2px rgba(105, 105, 105, 1);
+  -moz-box-shadow: inset 0px 0px 4px 2px rgba(105, 105, 105, 1);
+  box-shadow: inset 0px 0px 4px 2px rgba(105, 105, 105, 1);
+}
+
+.time-check:disabled {
+  cursor: not-allowed;
+}
+.time-check:hover + .time-label {
+  transform: scale(1.1);
 }
 .time-check:checked + .time-label {
   background-color: var(--bg-selected);
 }
 .time-check:disabled + .time-label {
   background-color: var(--bg-empty);
+  transform: none;
 }
