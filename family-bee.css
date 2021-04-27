@@ -63,6 +63,12 @@ nav .logo::after {
   content: "";
   height: 1rem;
 }
+
+/* Search */
+.nav-search-label {
+  width: 1rem;
+  margin-right: 1rem;
+}
 /* Hamburger Menu */
 #hamburger-check {
   height: 40px;

@@ -1,0 +1,86 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+:root {
+  --bg-initial: gray;
+  --bg-selected: green;
+  --bg-empty: red;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.timespace {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto;
+  grid-template-areas: "motorists time";
+  background-color: var(--bg-initial);
+}
+
+.timespace .motorists {
+  grid-area: motorist;
+}
+
+.timespace .time {
+  grid-area: time;
+}
+
+.counter,
+.time {
+  background-color: inherit;
+  position: relative;
+}
+.time .time-check {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0;
+}
+.time .time-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: inherit;
+}
+.time-check:checked + .time-label {
+  background-color: var(--bg-selected);
+}
+.time-check:disabled + .time-label {
+  background-color: var(--bg-empty);
+}
