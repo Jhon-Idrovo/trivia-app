@@ -25,7 +25,7 @@ const CATEGORIES = {
   Cartoons: 31,
 };
 
-export const getAllCategorieNames = () => {
+export const getAllCategoryNames = () => {
   const categories = Object.keys(CATEGORIES);
   return categories;
 };

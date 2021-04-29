@@ -10,7 +10,10 @@ function Trivia({ questions }) {
   const [bar, setBar] = useState(questions.map((q) => " "));
 
   const handleClick = (e, selection) => {
-    selection == questions[question].answerIndex
+    /*note that if the user doesn't select any option
+      false will be passed as selection. 
+    */
+    parseInt(selection) === questions[question].answerIndex
       ? updatePgrsBar(" correct")
       : updatePgrsBar(" incorrect");
     console.log(questions.length);
@@ -35,7 +38,7 @@ function Trivia({ questions }) {
           );
         })}
       </div>
-      <Question question={questions[question]} handleClick={handleClick} />
+      <Question {...questions[question]} handleClick={handleClick} />
     </div>
   );
 }

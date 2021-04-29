@@ -2,7 +2,7 @@ import React from "react";
 import Categorie from "../components/Categorie";
 import { useRouter } from "next/router";
 
-import { getAllCategorieNames } from "../lib/trivia";
+import { getAllCategoryNames } from "../lib/trivia";
 
 function Categories({ categories }) {
   const router = useRouter();
@@ -25,7 +25,7 @@ export default Categories;
 
 export async function getStaticProps() {
   //fetch categories
-  const categories = getAllCategorieNames();
+  const categories = getAllCategoryNames();
   return {
     props: {
       categories,
