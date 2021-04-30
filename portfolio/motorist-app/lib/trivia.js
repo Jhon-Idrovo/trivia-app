@@ -32,3 +32,7 @@ export const getAllCategoryNames = () => {
 export const getCategoryCode = (name) => {
   return CATEGORIES[name];
 };
+
+export const calcPoints = (answers) => {
+  return answers.filter((a) => a === "correct").length * 100;
+};

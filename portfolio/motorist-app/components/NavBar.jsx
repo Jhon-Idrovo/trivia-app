@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { getAllCategoryNames } from "../lib/trivia";
+import { useRouter } from "next/router";
+
 function NavBar() {
+  const router = useRouter();
+
   return (
     <nav className="nav-bar">
       <Link href="https://home.com">
@@ -11,16 +15,22 @@ function NavBar() {
         <div></div>
         <ul className="nav-options">
           <li id="nav-item-leaderboard">
-            <Link href="#">
-              <a className="primary-nav-item">Leaderboard</a>
+            <Link href="/leaderboard">
+              <a
+                className={`primary-nav-item ${
+                  router.pathname == "/leaderboard" ? "active" : ""
+                }`}
+              >
+                Leaderboard
+              </a>
             </Link>
           </li>
           <li id="nav-item-categories">
+            <input type="checkbox" id="categories-check" />
             <label htmlFor="categories-check" className="primary-nav-item">
               Categories
             </label>
-            <input type="checkbox" id="categories-check" />
-            <span></span>
+
             <ul className="sub-nav">
               {getAllCategoryNames().map((cat) => (
                 <li className="sub-nav-category-item">
@@ -29,14 +39,26 @@ function NavBar() {
               ))}
             </ul>
           </li>
-          <li>
-            <Link href="#">
-              <a className="primary-nav-item">Send Comments</a>
-            </Link>
+          <li id="nav-item-comments">
+            <input type="checkbox" id="send-comments" />
+            <label htmlFor="send-comments" className="primary-nav-item">
+              Send Comments
+            </label>
+            <div className="comments-container">
+              <textarea name="comments" id="comments" rows="10"></textarea>
+
+              <button className="form-btn">Submit</button>
+            </div>
           </li>
           <li>
-            <Link href="#">
-              <a className="primary-nav-item">Creators</a>
+            <Link href="/creators">
+              <a
+                className={`primary-nav-item ${
+                  router.pathname === "/creators" ? "active" : ""
+                }`}
+              >
+                Creators
+              </a>
             </Link>
           </li>
         </ul>
