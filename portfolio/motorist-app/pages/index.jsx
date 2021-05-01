@@ -16,9 +16,7 @@ export default function Home({ timeSlots }) {
       return setSelection(null);
     }
 
-    //if the key is not selected:
-    //1. we have another key seleted
-    //2. we don't have another key selected
+    //if the key is not selected we have two more cases
     selection ? timeSlots[selection]++ : null;
     timeSlots[key]--;
     setSelection(key);
