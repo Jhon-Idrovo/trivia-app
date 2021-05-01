@@ -23,30 +23,6 @@ export default function Home() {
       <Head>
         <title>Trivia App</title>
       </Head>
-      <form className=" form" action="">
-        <p className="form-message">
-          Por favor ingresa la siguiente información para mejorar la experiencia
-        </p>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          className=" form-input name"
-          placeholder="Nombre"
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          name="age"
-          id="age"
-          className=" form-input age"
-          placeholder="Edad"
-          onChange={handleChange}
-        />
-        <button type="submit" className="form-btn" onClick={handleClick}>
-          Continuar
-        </button>
-      </form>
     </>
   );
 }
