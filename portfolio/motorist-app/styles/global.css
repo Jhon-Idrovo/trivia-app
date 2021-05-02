@@ -5,13 +5,11 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.5;
-  font-size: 16px;
-  background-color: var(--bg-base);
+  height: 100vh;
   overflow-x: hidden;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -19,7 +17,7 @@ body {
   text-decoration: none;
   color: black;
   outline: none;
-}
+} */
 
 /* SCROLLBAR */
 /* width */
@@ -40,4 +38,20 @@ body {
 
 body {
   @apply dark:bg-base-dark bg-base;
+}
+
+.nav-tab {
+  @apply w-min p-2 m-auto hover:bg-base hover:text-txt-base;
+}
+
+.tab-active {
+  @apply bg-base text-txt-base;
+}
+
+.highlight {
+  @apply font-medium;
+}
+
+#toggler-check:checked + div {
+  transform: translateX(1.7rem);
 }

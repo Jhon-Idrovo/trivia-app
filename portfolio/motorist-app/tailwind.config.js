@@ -8,11 +8,15 @@ module.exports = {
       "base-dark": colors.black,
       primary: colors.yellow[300],
 
-      "txt-base": colors.white,
+      "txt-base": colors.black,
       "txt-primary": colors.black,
 
       secondary: colors.white,
-      "txt-primary": colors.black,
+      "txt-secondary": colors.black,
+
+      "btn-base": colors.yellow[300],
+      "btn-primary": colors.black,
+      "btn-txt-primary": colors.yellow[300],
     },
     extend: {},
   },
