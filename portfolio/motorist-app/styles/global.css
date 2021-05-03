@@ -37,3 +37,14 @@ body {
   background: var(--bg-btn);
   border-radius: 5px;
 }
+
+.nav-item:hover {
+  @apply border-txt-primary border-solid border-t-2 border-b-2;
+}
+.nav-item {
+  @apply px-2 m-2;
+}
+
+.btn-base {
+  @apply bg-primary text-txt-primary hover:scale-100 p-2;
+}
